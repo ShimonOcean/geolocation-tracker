@@ -24,7 +24,14 @@ if (navigator.geolocation)
                 const { lat, lng } = mapEvent.latlng;
             
                 L.marker([lat, lng]).addTo(map)
-                .bindPopup('Position')
+                .bindPopup(L.popup({
+                    maxWidth: 250, 
+                    minWidth: 100,
+                    autoClose: false,
+                    closeOnClick: false,
+                    className: 'marker1-popup',
+                }))
+                .setPopupContent('Marker')
                 .openPopup();
             })
 
